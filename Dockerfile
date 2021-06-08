@@ -17,5 +17,7 @@ RUN composer install \
 
 FROM php:7.2-apache-stretch
 
+EXPOSE 3002
+
 COPY . /var/www/html
 COPY --from=vendor /tmp/vendor/ /var/www/html/vendor/
