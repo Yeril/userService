@@ -21,3 +21,5 @@ EXPOSE 3002
 
 COPY . /var/www/html
 COPY --from=vendor /tmp/vendor/ /var/www/html/vendor/
+
+CMD ["apache2-foreground"]
