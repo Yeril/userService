@@ -9,6 +9,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class helloWorldController extends AbstractController{
 
     /**
+     * @Route("/")
+     */
+    public function index():Response
+    {
+        $hello = array('index' => 'hello world');
+
+        return new JsonResponse($hello);
+    }
+
+    /**
      * @Route("/api/test")
      */
     public function saidHello():Response
