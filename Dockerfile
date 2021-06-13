@@ -13,8 +13,6 @@ RUN composer install \
     --no-plugins \
     --no-scripts \
     --prefer-dist \
-    mysqli \
-    pdo pdo_mysql
 
 
 FROM php:7.2-apache-stretch
