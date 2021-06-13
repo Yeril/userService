@@ -1,4 +1,4 @@
-FROM php:7.2-apache-stretch
+FROM php:8.1.0alpha1-apache
 
 RUN a2enmod rewrite
 
