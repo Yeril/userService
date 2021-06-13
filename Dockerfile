@@ -1,18 +1,11 @@
+FROM php:7.4-apache
 
-FROM composer:1.9.3 as vendor
+# … cut for readability
 
+COPY docker/apache.conf /etc/apache2/sites-enabled/000-default.conf
+COPY docker/entrypoint.sh /entrypoint.sh
 
-WORKDIR /tmp/
-
-COPY composer.json composer.json
-COPY composer.lock composer.lock
-
-FROM php:7.2-apache-stretch
-
-EXPOSE 3002
-
-COPY . /var/www/html
-COPY --from=vendor /tmp/vendor/ /var/www/html/vendor/
+# … cut for readability
 
 RUN chmod +x /entrypoint.sh
 
