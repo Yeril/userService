@@ -22,7 +22,7 @@ class UserController extends AbstractController
         $users = $userRepository->findBy(array('login'=>$request->get('login')));
 //        $users = $userRepository->findBy(array('email'=>$request->get('email')));
         if(is_array($users) && !empty($users)){
-            return new Response('zajete');
+            return new Response('false'); //zajete
         }else {
             $user = new User();
             $user->setLogin($request->get('login'));
@@ -36,7 +36,7 @@ class UserController extends AbstractController
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush();
 
-            return new Response('Saved new user with id ' . $user->getId());
+            return new Response('true'); //ok
 //        return $this->render('user/index.html.twig', [
 //            'controller_name' => 'UserController',
 //        ]);
@@ -54,9 +54,9 @@ class UserController extends AbstractController
 
         $users = $userRepository->findBy(array('login'=>$request->get('login'), 'password' => $request->get('password')));
         if(is_array($users) && !empty($users)){
-            return new Response('true');
+            return new Response('true'); //poprawne logowanie
         }else {
-            return new Response('error');
+            return new Response('false'); //nie ma takiego uzytkownika/bledne haslo
         }
     }
 
