@@ -54,7 +54,7 @@ class UserController extends AbstractController
 
         $users = $userRepository->findBy(array('login'=>$request->get('login'), 'password' => $request->get('password')));
         if(is_array($users) && !empty($users)){
-            return new Response('login');
+            return new Response('true');
         }else {
             return new Response('error');
         }
