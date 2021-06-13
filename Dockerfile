@@ -12,7 +12,7 @@ RUN composer install \
     --no-interaction \
     --no-plugins \
     --no-scripts \
-    --prefer-dist \
+    --prefer-dist
 
 
 FROM php:7.2-apache-stretch
