@@ -18,7 +18,7 @@ password
 ###### -/user/show
 Testing the connection to db. Returns a list of all users.
 
-#Doc
+# Doc
 
 GET /user/show HTTP/1.1
 Host: localhost:8080
