@@ -19,16 +19,15 @@ password
 Testing the connection to db. Returns a list of all users.
 
 # Doc
+### GET /user/show HTTP/1.1
+**Host: localhost:8080
+Content-Type: text/html**
 
-GET /user/show HTTP/1.1
-Host: localhost:8080
-Content-Type: text/html
 
-
-Response:
+**Response:**
 "String"
 
-Example:
+**Example:**
 All users:
 1 test2 2021-06-13 14:05:16
 2 12345 2021-06-13 18:24:54
@@ -37,9 +36,9 @@ All users:
 
 
 
-POST /user/register HTTP/1.1
-Host: localhost:8080
-Content-Type: text/html
+### POST /user/register HTTP/1.1
+**Host: localhost:8080
+Content-Type: text/html**
 
 {
   "login": "string",
@@ -47,37 +46,37 @@ Content-Type: text/html
   "password": "string"
 }
 
-Example:
+**Example:**
 {
   "login": "jankowalski",
   "email": "jankkowalski@kowal.com",
   "password": "qwerty123"
 }
 
-Response:
+**Response:**
 "boolean"
 
-Example:
+**Example:**
 true
 
 
-POST /user/login HTTP/1.1
-Host: localhost:8080
-Content-Type: text/html
+### POST /user/login HTTP/1.1
+**Host: localhost:8080
+Content-Type: text/html**
 
 {
   "login": "string",
   "password": "string"
 }
 
-Example:
+**Example:**
 {
   "login": "jankowalski",
   "password": "qwerty123"
 }
 
-Response:
+**Response:**
 "boolean"
 
-Example:
+**Example:**
 false
